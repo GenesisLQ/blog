@@ -1,0 +1,25 @@
+{{extend './_layout/layout.html'}}
+{{block 'head'}}
+<link rel="stylesheet" href="/public/css/index.css">
+{{/block}}
+{{block 'title'}}首页{{/block}}
+{{block 'content'}}
+
+{{each articles}}
+<div class="row main">
+  <div class="thumbnail">
+    <div class="caption">
+      <h3><a href="/article_details?id={{$value.id}}" class="article-title">{{$value.title}}</a></h3>
+      <p class="des watch-info">{{$value.description}}</p>
+      <p class="watch-info">{{$value.like}}人点赞·{{$value.dislike}}人吐槽·1个回复·187次浏览·{{day[$index]}}&nbsp;&nbsp;&nbsp;作者：{{$value
+        .author}}</p>
+      <p>
+        <a href="#" class="btn btn-primary"><span class="glyphicon glyphicon-thumbs-up"></span> 点赞</a>
+          <a href="#" class="btn btn-default"><span class="glyphicon glyphicon-thumbs-down"></span> 吐槽</a>
+      </p>
+    </div>
+    <div class="article-pic"><img class="article-pic-md" src="/public/img/3.jpg" alt=""></div>
+  </div>
+</div>
+{{/each}}
+{{/block}}

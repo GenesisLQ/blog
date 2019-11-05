@@ -1,0 +1,34 @@
+{{extend './_layout/layout.html'}}
+{{block 'head'}}
+<link rel="stylesheet" href="/public/css/write.css">
+<style>
+	.text {
+		font-size: 16px;
+	}
+</style>
+{{/block}}
+{{block 'title'}}
+{{article.title}}
+{{/block}}
+{{block 'topic'}}
+{{/block}}
+
+{{block 'content'}}
+<div class="main">
+	<h1>{{article.title}}</h1>
+	<p>作者：{{article.author}}</p>
+	<div class="content" style="display: none">{{article.content}}</div>
+	<div class="text"></div>
+</div>
+{{/block}}
+
+{{block 'script'}}
+<script src="/node_modules/showdown/dist/showdown.js"></script>
+<script>
+	var converter = new showdown.Converter()
+	var	text = $('.content').html()
+	var	html = converter.makeHtml(text)
+	console.log(text)
+	$('.text').html(html)
+</script>
+{{/block}}

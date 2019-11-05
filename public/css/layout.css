@@ -1,0 +1,78 @@
+body {
+  padding-top: 84px;
+}
+.menu-icon {
+  margin-right: 15px;
+}
+.main {
+  margin: 0 300px;
+}
+.navbar {
+  height: 74px;
+}
+.navbar .container-fluid {
+  margin-top: 10px;
+}
+.navbar .container-fluid .logo {
+  width: 120px;
+  margin-top: 8px;
+  margin-right: 40px;
+}
+.navbar .container-fluid .avatar {
+  position: relative;
+  display: inline-block;
+  height: 74px;
+}
+.navbar .container-fluid .avatar .ava-pic {
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+.navbar .container-fluid .avatar .dropdown {
+  display: inline-block;
+}
+.navbar .container-fluid .nav-login {
+  display: inline-block;
+  margin-top: 8px;
+  margin-left: 30px;
+}
+.navbar .container-fluid .nav-login a {
+  text-decoration: none;
+}
+.navbar .container-fluid .nav-login button {
+  margin-left: 10px;
+}
+.navbar .container-fluid .login-text {
+  color: #7d7d7d;
+}
+h2 {
+  font-weight: normal;
+  display: inline-block;
+}
+.following {
+  margin-top: -10px;
+  margin-left: 20px;
+}
+.topic .des {
+  margin-top: 10px;
+}
+.topic .des .topic-des {
+  font-size: 12px;
+  color: #a4a9ae;
+  margin-top: 3px;
+}
+.type {
+  display: inline-block;
+  height: 40px;
+  color: #2a57cc;
+  font-weight: 300;
+  font-size: 18px;
+  margin-top: 30px;
+  border-bottom: 2px solid #2a57cc;
+}
+hr {
+  margin-top: 0;
+}
+/*# sourceMappingURL=layout.css.map */

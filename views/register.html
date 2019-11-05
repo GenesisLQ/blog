@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>InfoQ - 注册</title>
+  <link rel="shortcut icon" href="/public/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="/public/css/bootstrap.css">
+  <link rel="stylesheet" href="/public/css/login.css">
+</head>
+
+<body>
+  <div class="jumbotron login">
+    <a href="/">
+      <img src="/public/img/logo.png" alt="">
+    </a>
+    <h3>用户注册</h3>
+    <form id="register_form">
+      <div class="form-group">
+        <label>邮箱</label>
+        <input type="email" class="form-control" name="email" placeholder="Email" autofocus>
+      </div>
+      <div class="form-group">
+        <label>昵称</label>
+        <input type="text" class="form-control" name="nickname" placeholder="Nickname">
+      </div>
+      <div class="form-group">
+        <label>密码</label>
+        <input type="password" class="form-control" name="password" placeholder="Password">
+      </div>
+      <button type="submit" class="btn btn-primary btn-lg">注册</button>
+    </form>
+    <p><a class="login-tip" href="/login">已有账号？立即登录</a></p>
+  </div>
+</body>
+
+<script src="/public/js/jquery.js"></script>
+<script>
+  $('#register_form').on('submit', function (e) {
+    e.preventDefault()
+    var formData = $(this).serialize()
+    $.ajax({
+      url: '/register',
+      type: 'post',
+      data: formData,
+      // 如果服务端发送的数据是 json 格式，那么解析的时候就需要按照 json 解析
+      dataType: 'json',
+      success: function (data) {
+        if (data.res_code === 0) {
+          window.alert('恭喜你，注册成功')
+          // 对于异步请求，服务端重定向无效，只要通过客户端重定向到登录页面
+          window.location.href = '/login'
+        } else if (data.res_code === 1) {
+          window.alert('邮箱已存在')
+        } else if (data.res_code === 2) {
+          window.alert('昵称已存在')
+        } else if (data.res_code === 500) {
+          window.alert('服务器正忙，请稍后再试')
+        }
+      }
+    })
+  })
+</script>
+
+</html>

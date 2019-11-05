@@ -1,0 +1,91 @@
+.side {
+  display: block;
+  width: 200px;
+  height: 300px;
+  margin-left: 145px;
+  margin-top: 50px;
+  border: 1px solid #e7e7e7;
+  border-radius: 5px;
+  float: left;
+}
+.side .nav-pills {
+  text-align: center;
+}
+.side .nav-pills a {
+  border-radius: 0;
+  margin-top: 0;
+}
+.side .nav-pills .current {
+  background: #eee;
+}
+.setting {
+  position: relative;
+  left: 150px;
+  top: 50px;
+}
+.setting .info-setting {
+  position: absolute;
+  left: 350px;
+}
+.setting .info-setting .alert-info {
+  position: absolute;
+  width: 400px;
+  margin-top: -59px;
+  display: none;
+}
+.setting .info-setting form {
+  float: left;
+  width: 400px;
+  margin-top: -20px;
+}
+.setting .info-setting form h2 {
+  padding-bottom: 16px;
+}
+.setting .info-setting .avatar-setting {
+  position: absolute;
+  left: 500px;
+  top: 0;
+}
+.setting .info-setting .avatar-setting .ava-img {
+  display: block;
+  margin-top: 20px;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+}
+.setting .info-setting .avatar-setting input {
+  display: none;
+}
+.setting .info-setting .avatar-setting button {
+  margin-top: 20px;
+  margin-left: 10px;
+  outline: none;
+}
+.setting .account-setting {
+  position: absolute;
+  left: 350px;
+  display: none;
+}
+.setting .account-setting .success,
+.setting .account-setting .confirm-pwd,
+.setting .account-setting .empty-pwd,
+.setting .account-setting .error-oldpwd {
+  position: absolute;
+  width: 400px;
+  margin-top: -59px;
+  display: none;
+}
+.setting .account-setting form {
+  margin-top: -20px;
+}
+.setting .account-setting .logoff {
+  width: 400px;
+  padding: 0 15px;
+  margin-top: 20px;
+}
+.setting .account-setting .logoff .warnning {
+  color: #518cc0;
+  text-decoration: underline;
+  font-size: 18px;
+}
+/*# sourceMappingURL=setting.css.map */

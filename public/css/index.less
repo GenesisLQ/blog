@@ -1,0 +1,84 @@
+.watch-info {
+  font-weight: 300;
+  color: #a4a9ae;
+}
+.article-title {
+  color: #333333;
+  font-weight: 300;
+
+  &:hover {
+    color: #2a57cc;
+  }
+
+  &:hover, &:visited, &:link {
+    text-decoration: none;
+  }
+}
+
+.thumbnail {
+  position: relative;
+
+  .caption {
+    width: 100%;
+  }
+
+  .article-pic {
+    display: none;
+  }
+
+  @media (min-width: 992px) {
+    .caption {
+      width: 77%;
+    }
+
+    .article-pic {
+      position: absolute;
+      right: 15px;
+      top: 30px;
+      width: 175px;
+      height: 130px;
+      overflow: hidden;
+      border-radius: 5px;
+      cursor: pointer;
+      display: block;
+
+      .article-pic-md {
+        transition: .3s;
+        border-radius: 5px;
+        width: 175px;
+        height: 130px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, .1);
+
+        &:hover {
+          transform: scale(1.1);
+        }
+      }
+    }
+  }
+
+  //.article-pic {
+  //  position: absolute;
+  //  right: 15px;
+  //  top: 30px;
+  //  width: 175px;
+  //  height: 130px;
+  //  overflow: hidden;
+  //  border-radius: 5px;
+  //  cursor: pointer;
+  //  display: none;
+  //
+  //  .article-pic-md {
+  //    transition: .3s;
+  //    border-radius: 5px;
+  //    width: 175px;
+  //    height: 130px;
+  //    box-shadow: 0 2px 8px rgba(0, 0, 0, .1);
+  //
+  //    &:hover{
+  //      transform: scale(1.1);
+  //    }
+  //  }
+  //
+  //
+  //}
+}

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>{{block 'title'}}layout{{/block}}</title>
+	<link rel="shortcut icon" href="/public/favicon.ico" type="image/x-icon">
+	<link rel="stylesheet" href="/public/css/bootstrap.css">
+	<link rel="stylesheet" href="/public/css/layout.css">
+
+	{{block 'head'}}{{/block}}
+</head>
+
+<body>
+<nav class="navbar navbar-default navbar-fixed-top">
+	<div class="container-fluid container">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+							data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<a href="/">
+				<img class="logo" src="/public/img/logo.png" alt="Brand">
+			</a>
+		</div>
+
+		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+			<ul class="nav navbar-nav">
+				<li><a href="#">首页</a></li>
+				<li><a href="#">架构</a></li>
+				<li><a href="#">云计算</a></li>
+				<li><a href="#">AI</a></li>
+				<li><a href="#">前端</a></li>
+				<li><a href="#">编程语言</a></li>
+				<li><a href="#">开源</a></li>
+				<li><a href="#">...</a></li>
+				<form class="navbar-form navbar-left" role="search">
+					<div class="form-group">
+						<input type="text" class="form-control" placeholder="Search">
+					</div>
+					<button type="submit" class="btn btn-default">搜索</button>
+				</form>
+				{{if user}}
+				<div class="avatar">
+					<img class="ava-pic" src="{{user.avatar}}" alt="">
+					<div class="dropdown">
+						<button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown"
+										aria-haspopup="true" aria-expanded="true">
+							欢迎你：{{user.nickname}}&nbsp;
+							<span class="caret"></span>
+						</button>
+						<ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+							<li><a href="/personal_home"><span class="menu-icon glyphicon glyphicon-user"></span>个人中心</a></li>
+							<li class="divider"></li>
+							<li><a href="/write"><span class="menu-icon glyphicon glyphicon-leaf"></span>写文章</a></li>
+							<li class="divider"></li>
+							<li><a href="/setting"><span class="menu-icon glyphicon glyphicon-menu-hamburger"></span>设置</a></li>
+							<li class="divider"></li>
+							<li><a href="/logout"><span class="menu-icon glyphicon glyphicon-log-out"></span>退出</a></li>
+						</ul>
+					</div>
+				</div>
+				{{else}}
+				<div class="nav-login">
+					<a href="/login">
+						<button type="button" class="btn btn-primary">登录</button>
+					</a>
+					<a href="/register">
+						<button type="button" class="btn btn-success">注册</button>
+					</a>
+				</div>
+				{{/if}}
+			</ul>
+		</div>
+	</div>
+</nav>
+
+{{block 'topic'}}
+<div class="topic main">
+	<h2>前端</h2>
+	<button class="following btn btn-default">关注</button>
+	<div class="des">
+		<div class="topic-des">你以为前端只关乎浏览器页面开发，其实它是技术人的“娱乐圈”。</div>
+		<div class="topic-des">收录了前端频道下的 810 篇文章</div>
+	</div>
+</div>
+<div class="main type">文章</div>
+<hr size="1px">
+{{/block}}
+
+{{block 'content'}}
+<h1>默认的内容</h1>
+{{/block}}
+
+<script src="/public/js/jquery.js"></script>
+<script src="/public/js/bootstrap.js"></script>
+
+{{block 'script'}}{{/block}}
+</body>
+
+</html>

@@ -1,0 +1,54 @@
+.avatar-home {
+  width: 150px;
+  height: 200px;
+  margin: 25px auto -5px;
+
+  img {
+    width: 150px;
+    border-radius: 50%;
+  }
+}
+
+.nav-tabs {
+  margin-bottom: 20px;
+}
+
+.thumbnail {
+  position: relative;
+
+  .caption {
+    width: 100%;
+  }
+
+  .article-pic {
+    display: none;
+  }
+
+  @media (min-width: 992px) {
+    .caption {
+      width: 84%;
+    }
+
+    .article-pic {
+      display: block;
+      position: absolute;
+      right: 15px;
+      top: 26px;
+      width: 120px;
+      overflow: hidden;
+      border-radius: 5px;
+
+      .article-pic-sm {
+        transition: .3s;
+        border-radius: 5px;
+        width: 120px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, .1);
+
+        &:hover {
+          transform: scale(1.1);
+        }
+      }
+    }
+  }
+}
+

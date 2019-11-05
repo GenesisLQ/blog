@@ -1,0 +1,47 @@
+{{extend './_layout/layout.html'}}
+{{block 'title'}}
+InfoQ - 个人中心
+{{/block}}
+{{block 'head'}}
+<link rel="stylesheet" href="/public/css/index.css">
+<link rel="stylesheet" href="/public/css/home.css">
+{{/block}}
+{{block 'topic'}}
+{{/block}}
+{{block 'content'}}
+<div class="main">
+	<div class="avatar-home">
+		<img class="ava-img" src="{{user.avatar}}" alt="">
+	</div>
+</div>
+<hr>
+<div class="main">
+	<ul class="nav nav-tabs" id="myTabs">
+		<li role="presentation" class="active"><a href="#">我的文章</a></li>
+		<li role="presentation"><a href="#">我的关注</a></li>
+		<li role="presentation"><a href="#">我的点赞</a></li>
+	</ul>
+	{{each article}}
+	<div class="thumbnail">
+		<div class="caption">
+			<h3><a href="/article_details?id={{$value.id}}" class="article-title">{{$value.title}}</a></h3>
+			<p class="des watch-info">{{$value.description}}</p>
+			<p class="watch-info">{{$value.like}}人点赞·{{$value.dislike}}人吐槽·1个回复·187次浏览·{{day[$index]}}</p>
+		</div>
+		<div class="article-pic">
+			<a href="/article_details?id={{$value.id}}"><img class="article-pic-sm" src="/public/img/3.jpg" alt=""></a>
+		</div>
+	</div>
+	{{/each}}
+</div>
+{{/block}}
+
+{{block 'script'}}
+<script>
+	$('#myTabs a').click(function (e) {
+		e.preventDefault()
+		$(this).tab('show')
+	})
+</script>
+{{/block}}
+

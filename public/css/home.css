@@ -1,0 +1,45 @@
+.avatar-home {
+  width: 150px;
+  height: 200px;
+  margin: 25px auto -5px;
+}
+.avatar-home img {
+  width: 150px;
+  border-radius: 50%;
+}
+.nav-tabs {
+  margin-bottom: 20px;
+}
+.thumbnail {
+  position: relative;
+}
+.thumbnail .caption {
+  width: 100%;
+}
+.thumbnail .article-pic {
+  display: none;
+}
+@media (min-width: 992px) {
+  .thumbnail .caption {
+    width: 84%;
+  }
+  .thumbnail .article-pic {
+    display: block;
+    position: absolute;
+    right: 15px;
+    top: 26px;
+    width: 120px;
+    overflow: hidden;
+    border-radius: 5px;
+  }
+  .thumbnail .article-pic .article-pic-sm {
+    transition: 0.3s;
+    border-radius: 5px;
+    width: 120px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+  .thumbnail .article-pic .article-pic-sm:hover {
+    transform: scale(1.1);
+  }
+}
+/*# sourceMappingURL=home.css.map */

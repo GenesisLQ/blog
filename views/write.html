@@ -1,0 +1,63 @@
+{{extend './_layout/layout.html'}}
+{{block 'head'}}
+<link rel="stylesheet" href="/public/css/write.css">
+{{/block}}
+{{block 'title'}}
+InfoQ - 发表文章
+{{/block}}
+{{block 'topic'}}
+{{/block}}
+
+{{block 'content'}}
+<form id="article-form">
+	<div class="container clearfix">
+		<p>你可以使用我们的 markdown 编辑器在线完成你的创作，markdown 编辑器可以让你专注于写作内容，并且实时预览你的文章</p>
+		<p>点击发表即可发布你的文章</p>
+		<a class="send btn btn-primary" href="javascript:;" data-toggle="modal" data-target="#titleModal"><span
+						class="menu-icon glyphicon glyphicon-send"></span>发表</a>
+		<textarea class="write form-control" name="content" id="" cols="30" rows="30"
+							placeholder="在这里写下你的文章"></textarea>
+		<div class="preview">
+			<div class="preview-text"><span class="preview-tip">这里将实时预览你的文章</span></div>
+		</div>
+	</div>
+	<!-- 标题提示框 -->
+	<div class="modal fade" id="titleModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+									aria-hidden="true">&times;</span></button>
+					<h4 class="modal-title" id="myModalLabel">为你的文章起个标题</h4>
+				</div>
+				<div class="modal-body">
+					<input type="text" name="title" class="title form-control" placeholder="标题" autocomplete="off">
+					<textarea name="description" class="des form-control" cols="30" rows="3" placeholder="为你的文章添加一段描述"></textarea>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+					<button type="submit" class="btn btn-primary">确定</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</form>
+
+<div id="modal-sm" class="modal fade" tabindex="-1" aria-labelledby="mySmallModalLabel">
+	<div class="modal-dialog modal-sm" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h4 class="modal-title" id="myModalLabel">提示</h4>
+			</div>
+			<div class="tip modal-body">
+				<!--<div class="tip"></div>-->
+			</div>
+		</div>
+	</div>
+</div>
+{{/block}}
+
+{{block 'script'}}
+<script src="/node_modules/showdown/dist/showdown.js"></script>
+<script src="/public/js/write.js"></script>
+{{/block}}

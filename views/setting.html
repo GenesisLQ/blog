@@ -1,0 +1,127 @@
+{{extend './_layout/layout.html'}}
+{{block 'title'}}
+InfoQ - 设置
+{{/block}}
+{{block 'head'}}
+<link rel="stylesheet" href="/public/css/setting.css">
+{{/block}}
+{{block 'topic'}}
+{{/block}}
+{{block 'content'}}
+<div class="side">
+	<ul class="nav nav-pills nav-stacked">
+		<li class="active setting-head"><a href="javascript:;">用户设置</a></li>
+		<li><a class="info current">基本信息</a></li>
+		<li><a class="account">账号设置</a></li>
+	</ul>
+</div>
+
+<div class="setting">
+	<div class="info-setting">
+		<div class="alert alert-info">保存成功</div>
+		<form id="personal-info-form" enctype="multipart/form-data">
+			<h2>基本信息设置</h2>
+			<div class="avatar-setting">
+				<label>头像设置</label>
+				<img class="ava-img" src="{{user.avatar}}" alt="">
+				<input class="select_file" type="file" name="avatar">
+				<button type="button" class="upload btn btn-default">选择图片</button>
+			</div>
+			<div class="form-group">
+				<label>邮箱（不可更改）</label>
+				<input class="form-control" id="disabledInput" name="email" type="text" value="{{user.email}}" readonly>
+			</div>
+			<div class="form-group">
+				<label>昵称</label>
+				<input type="text" class="form-control" name="nickname" value="{{data.nickname}}">
+			</div>
+			<div class="form-group">
+				<label>性别</label>
+				<br>
+				<label class="radio-inline">
+					<input type="radio" name="gender" value="-1" {{if data.gender=== -1}}checked{{/if}}> 保密
+				</label>
+				<label class="radio-inline">
+					<input type="radio" name="gender" value="0" {{if data.gender=== 0}}checked{{/if}}> 男
+				</label>
+				<label class="radio-inline">
+					<input type="radio" name="gender" value="1" {{if data.gender=== 1}}checked{{/if}}> 女
+				</label>
+			</div>
+			<div class="form-group">
+				<label>生日</label>
+				<input type="date" class="form-control" name="birthday" value="{{birthday}}">
+			</div>
+			<div class="form-group">
+				<label>介绍</label>
+				<textarea class="bio form-control" rows="4" name="biography" placeholder="写一句话介绍一下你自己吧！"></textarea>
+			</div>
+			<button type="submit" class="btn btn-primary">保存</button>
+		</form>
+	</div>
+
+	<div class="account-setting">
+		<div class="alert alert-info success">修改成功</div>
+		<div class="alert alert-danger confirm-pwd">两次密码不一致，请检查后重新输入！</div>
+		<div class="alert alert-danger empty-pwd">密码不能为空</div>
+		<div class="alert alert-danger error-oldpwd">你输入的密码不正确，请重新输入！</div>
+		<form id="pwd-form">
+			<h2>修改密码</h2>
+			<div class="form-group">
+				<label>当前密码</label>
+				<input id="oldPwd" type="password" name="oldPwd" class="form-control">
+			</div>
+			<div class="form-group">
+				<label>新的密码</label>
+				<input id="newPwd" type="password" name="newPwd" class="form-control">
+			</div>
+			<div class="form-group">
+				<label>确认密码</label>
+				<input id="confirm" type="password" class="form-control">
+			</div>
+			<button class="btn btn-primary">修改</button>
+		</form>
+
+		<div class="logoff">
+			<h2>注销账号</h2>
+			<div class="row">
+				<div class="thumbnail">
+					<div class="caption">
+						<p>一旦注销账号，将不能再找回，<span class="warnning">请谨慎操作</span>！</p>
+						<button type="button" class="btn btn-danger" data-toggle="modal" data-target=".bs-example-modal-sm">删除
+						</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- 注销账号提示 -->
+<div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
+	<div class="modal-dialog modal-sm" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+								aria-hidden="true">&times;</span></button>
+				<h4 class="modal-title" id="myModalLabel">确定要注销账号吗？</h4>
+			</div>
+			<div class="modal-body">
+				<p>此操作将不可逆，一旦注销，你的所有信息都将会被删除，确认继续吗？</p>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+				<a href="/written_off">
+					<button type="button" class="btn btn-danger">确定</button>
+				</a>
+			</div>
+		</div>
+	</div>
+</div>
+{{/block}}
+
+{{block 'script'}}
+<script src="/public/js/setting.js"></script>
+<script>
+	$('.bio').val('{{data.biography}}')
+</script>
+{{/block}}

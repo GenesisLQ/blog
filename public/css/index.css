@@ -1,0 +1,52 @@
+.watch-info {
+  font-weight: 300;
+  color: #a4a9ae;
+}
+.article-title {
+  color: #333333;
+  font-weight: 300;
+}
+.article-title:hover {
+  color: #2a57cc;
+}
+.article-title:hover,
+.article-title:visited,
+.article-title:link {
+  text-decoration: none;
+}
+.thumbnail {
+  position: relative;
+}
+.thumbnail .caption {
+  width: 100%;
+}
+.thumbnail .article-pic {
+  display: none;
+}
+@media (min-width: 992px) {
+  .thumbnail .caption {
+    width: 77%;
+  }
+  .thumbnail .article-pic {
+    position: absolute;
+    right: 15px;
+    top: 30px;
+    width: 175px;
+    height: 130px;
+    overflow: hidden;
+    border-radius: 5px;
+    cursor: pointer;
+    display: block;
+  }
+  .thumbnail .article-pic .article-pic-md {
+    transition: 0.3s;
+    border-radius: 5px;
+    width: 175px;
+    height: 130px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+  .thumbnail .article-pic .article-pic-md:hover {
+    transform: scale(1.1);
+  }
+}
+/*# sourceMappingURL=index.css.map */
